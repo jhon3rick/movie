@@ -1,0 +1,133 @@
+@import "../../_theme";
+
+.form-input {
+	width: 100%;
+	margin: 10px 0;
+	padding: 10px 0 0 0;
+	display: flex;
+	position: relative;
+	align-items: center;
+	border-radius: 3px;
+	border-bottom: 1px solid #9e9e9e;
+	flex-direction: column;
+	-ms-flex-align: center;
+
+	&:after {
+		width: 0;
+		height: 1px;
+		content: '';
+		display: block;
+		background: $color-gray;
+		transition: width .5s ease, background-color .5s ease;
+	}
+
+	&.label-active:after {
+		width: 100%;
+		background: $color-primary;
+	}
+
+	&.focus {
+		label {
+			left: 0;
+			color: $color-primary;
+			-webkit-transform: translateY(-20px) scale(0.9);
+			transform: translateY(-20px) scale(0.9);
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+		}
+	}
+
+	&.empty {
+		label {
+			left: 5px;
+			-webkit-transform: translateY(0) scale(0.9);
+			transform: translateY(0) scale(0.9);
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+		}
+
+		// bug type data in input
+		input {
+			&::-webkit-datetime-edit { /* Chrome/Opera/Safari */
+				color: rgba(255, 255, 255, 0);
+			}
+			&:focus {
+				color: rgba(255, 255, 255, 0);
+			}
+			&:focus::-webkit-datetime-edit { /* Chrome/Opera/Safari */
+				color: rgba(255, 255, 255, 0);
+			}
+		}
+	}
+	> input {
+		width: 100%;
+		color: $font-color;
+		cursor: text;
+		border: none;
+		margin: 0;
+		height: 24px;
+		padding: 0 5px;
+		outline: none;
+		z-index: 2;
+		font-size: 13px;
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: transparent;
+
+		-webkit-box-shadow: none;
+		box-shadow: none;
+
+		&[type="file"]{
+			opacity: 0;
+		}
+	}
+
+	> label {
+		left: 10px;
+		color: #9e9e9e;
+		cursor: text;
+		bottom: 5px;
+		z-index: 1;
+		position: absolute;
+		font-size: 13px;
+		text-align: initial;
+
+		-webkit-transition: color .3s ease-out, -webkit-transform .3s ease-out;
+		transition: color .3s ease-out, -webkit-transform .3s ease-out;
+		transition: transform .3s ease-out, color .3s ease-out;
+		transition: transform .3s ease-out, color .3s ease-out, -webkit-transform .3s ease-out;
+
+		&.with-icon {
+			transform: translate(25px, 12px);
+		}
+
+		.span-file {
+			display: flex;
+			flex-direction: row;
+			color: #9e9e9e;
+			position: absolute;
+			font-size: 1rem;
+			margin-top: 10px;
+
+			.btn-img {				
+				position: absolute;
+				left: 210px;
+				cursor: pointer;
+			}
+
+		}
+	}
+
+	.file-container {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.after-icon {
+		left: -14px;
+		position: relative;
+
+		&:before {
+			color: $color-primary !important;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+---
+name: FormInputSelect
+menu: Components
+---
+import { Playground, PropsTable } from 'docz'
+import FormInputSelect from './'
+
+# FormInputSelect
+
+<PropsTable of={FormInputSelect}/>
+
+## Basic usage
+
+Container from Screen Components!
+<Playground>
+  <FormInputSelect
+    label="Input prueba"
+    onChange={(value, item)=>console.log('value', value, 'item', item)}
+    options={[
+      {
+        _id: 1,
+        name: 'option uno'
+      },
+      {
+        _id: 2,
+        name: 'option dos'
+      }
+    ]}
+  />
+</Playground>

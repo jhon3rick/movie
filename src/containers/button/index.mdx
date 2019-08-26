@@ -1,0 +1,20 @@
+---
+name: Button
+menu: Components
+---
+import { Playground, PropsTable } from 'docz'
+import Button from './index'
+
+# Button
+
+<PropsTable of={Button}/>
+
+## Basic usage
+
+Container from Screen Components!
+<Playground>
+  <Button
+    text="Click me!"
+    onClick={()=>alert('Event click')}
+  />
+</Playground>

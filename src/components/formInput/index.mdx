@@ -1,0 +1,20 @@
+---
+name: FormInput
+menu: Components
+---
+import { Playground, PropsTable } from 'docz'
+import FormInput from './'
+
+# FormInput
+
+<PropsTable of={FormInput}/>
+
+## Basic usage
+
+Container from Screen Components!
+<Playground>
+  <FormInput
+    label="Input prueba"
+    onChange={(value, item)=>console.log('value', value, 'item', item)}
+  />
+</Playground>

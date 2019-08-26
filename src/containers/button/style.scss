@@ -1,0 +1,91 @@
+@import "../../_theme";
+
+.btn {
+	cursor: pointer;
+	padding: 5px;
+	text-align: center;
+	align-self: center;
+	border-radius: 2px;
+
+	&.selected {
+		font-weight: 600;
+	}
+
+	&.btn-circle {
+    display: none;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+
+		&.size-small {
+			width: 32px;
+			height: 32px;
+		}
+
+		&.size-mid {
+			width: 44px;
+			height: 44px;
+		}
+
+		&.size-big {
+			width: 60px;
+			height: 60px;
+		}
+	}
+}
+
+.btn-red {
+	color: $color-white;
+	background-color: $color-primary;
+}
+
+.btn-gray {
+	color: $color-white;
+	background-color: $color-gray;
+}
+
+.btn-sm {
+	width: 135px;
+	height: 30px;
+	margin: 0 .2em;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	font-size: 14px;
+	box-shadow: 0 0 4px #999;
+	border-radius: 5px;
+}
+
+/* vertical btn */
+.btn-vertical {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+
+	> .btn-label {
+		height: 20px;
+		display: flex;
+		font-size: 0.8em;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+	}
+
+	> .btn-icon {
+		flex: 1;
+		width: 100%;
+		display: flex;
+		font-size: 1.2em;
+		align-items: center;
+		justify-content: center;
+
+		> span {
+			display: flex;
+		}
+	}
+}
+.btn-horizontal {
+	cursor: pointer;
+	margin: 0 10px;
+}

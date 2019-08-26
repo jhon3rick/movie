@@ -1,0 +1,123 @@
+@import "../../_theme";
+
+.form-input-select {
+	width: 120%;
+	margin: 10px 0;
+	padding: 10px 0 0 0;
+	display: flex;
+	position: relative;
+	align-items: center;
+	border-bottom: 1px solid $color-gray;
+	flex-direction: column;
+	-ms-flex-align: center;
+	border-bottom-width: 0.7px;
+
+	&:after {
+		width: 0;
+		height: 1px;
+		content: '';
+		display: block;
+		background: $color-gray;
+		transition: width .5s ease, background-color .5s ease;
+	}
+
+	&:before {
+		right: 5px;
+		color: $color-gray;
+		bottom: 7px;
+		content: "\e900";
+		z-index: -1;
+		position: absolute;
+		font-size: 10px;
+		margin-top: -8px;
+		font-family: 'svg-icon'!important;
+	}
+
+	&.label-active:after {
+		width: 100%;
+		background: $color-primary;
+	}
+
+	&.focus {
+		&:before {
+			color: $color-primary;
+		}
+		label {
+			left: 0;
+			color: $color-primary;
+			-webkit-transform: translateY(-20px) scale(0.9);
+			transform: translateY(-20px) scale(0.9);
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+		}
+	}
+
+	&.empty {
+		label {
+			left: 5px;
+			-webkit-transform: translateY(0) scale(0.9);
+			transform: translateY(0) scale(0.9);
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+		}
+
+		.with-icon {
+			-webkit-transform: translate(25px, -14px) scale(0.8);
+			transform: translate(25px, -14px) scale(0.8);
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+		}
+	}
+
+	> select {
+		width: 100%;
+		color: $font-color;
+		cursor: pointer;
+		padding: 0 5px;
+		z-index: 2;
+		font-family: Arial, Helvetica, sans-serif;
+		border-radius: 3px;
+		-webkit-appearance: none;
+
+		border: none;
+		margin: 0;
+		height: 24px;
+		outline: none;
+		font-size: 13px;
+		min-width: 50px;
+		// background-color: rgba(0, 0, 0, .05);
+		background-color: transparent;
+
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+	> label {
+		left: 0;
+		color: $font-color-input;
+		cursor: text;
+		bottom: 5px;
+		z-index: 1;
+		position: absolute;
+		font-size: 13px;
+		text-align: initial;
+
+		-webkit-transition: color .3s ease-out, -webkit-transform .3s ease-out;
+		transition: color .3s ease-out, -webkit-transform .3s ease-out;
+		transition: transform .3s ease-out, color .3s ease-out;
+		transition: transform .3s ease-out, color .3s ease-out, -webkit-transform .3s ease-out;
+
+		&.with-icon {
+			transform: translate(25px, 12px);
+		}
+	}
+
+	.after-icon {
+		left: -14px;
+		position: relative;
+
+		&:before {
+			color: var(--muted-text-color)!important;
+		}
+	}
+}

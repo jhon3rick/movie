@@ -1,0 +1,324 @@
+@import "./_theme.scss";
+
+
+/*
+ * http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	font: inherit;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	// list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+textarea {
+	outline: none;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/**
+ * import svg font family
+ * provider font https://icomoon.io
+ */
+@font-face {
+	font-family: 'svg-icon';
+	src: url('./assets/fonts/icomoon/icomoon.eot?jbs6qb');
+	src: url('./assets/fonts/icomoon/icomoon.eot?jbs6qb#iefix') format('embedded-opentype'),
+			url('./assets/fonts/icomoon/icomoon.ttf?jbs6qb') format('truetype'),
+			url('./assets/fonts/icomoon/icomoon.woff?jbs6qb') format('woff'),
+			url('./assets/fonts/icomoon/icomoon.svg?jbs6qb#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	speak: none;
+	font-family: 'svg-icon' !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star-empty:before {
+	content: "\e9d7";
+}
+.icon-star-full:before {
+	content: "\e9d9";
+}
+.icon-exit:before {
+  content: "\ea14";
+}
+
+/**
+ * class colors for app
+ * [font-color => fc, backgroun-color => bc]
+ */
+.fc-primary {
+	color: $color-primary;
+}
+.fc-red {
+	color: $color-red;
+}
+.fc-white {
+	color: $color-white;
+}
+.bc-primary {
+	background-color: $color-primary;
+}
+.bc-red {
+	background-color: $color-red;
+}
+.bc-white {
+	background-color: $color-white;
+}
+
+/**
+ * style flex
+ * [flex-end=>fe, flex-start=>fs, flex-center=>fc]
+ */
+.fe {
+	display: flex;
+	justify-content: flex-end;
+}
+.fs {
+	display: flex;
+	justify-content: flex-start;
+}
+.fc {
+	display: flex;
+	justify-content: center;
+}
+.fw {
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+/**
+ * styles for app
+ * @jhon3rick
+ * integ.ro
+ */
+
+/* my reset css */
+html, body, #root, .container-app {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	font-family: 'Roboto', arial, sans-serif;
+}
+
+.container-app {
+	.screen {
+		height: 100%;
+		display: flex;
+		// overflow: hidden;
+		flex-direction: column;
+
+		.form-container {
+			width: 100%;
+			max-width: 600px;
+			align-self: center;
+		}
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+textarea,
+input[type="text"],
+input[type="date"],
+input[type="button"],
+input[type="submit"] {
+	padding: 0 5px;
+	font-family: $font-family;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
+input[type="checkbox"]:focus{
+	outline:0;
+}
+
+input:disabled,
+select:disabled {
+	background-color: $color-scale-gray2;
+}
+
+/* text */
+.title {
+	font-family: $font-family;
+	color: $color-primary;
+	margin: 10px 0;
+	font-size: 1.5em;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+.subtitle {
+	margin: 0 0 10px 0;
+	color: $font-color;
+}
+
+.paragraph {
+	font-size: $font-size-paragraph;
+	color: #9F9F9F;
+	padding-bottom: 15px;
+	font-weight: bold;
+	justify-content: center;
+	line-height: 21px;
+}
+
+.ver-mas {
+	cursor: pointer;
+	margin: 7px 0 0 0;
+	font-size: 0.8em;
+	color: $color-primary;
+  }
+
+/* style ripple */
+.ripple,
+.ripple-btn-red,
+.ripple-btn-gray,
+.ripple-table-row {
+	transition: background .8s;
+	background-position: 50%;
+}
+
+// ripple
+.ripple:hover {
+	background: #0071a0 radial-gradient(circle, transparent 1%, #0071a0 1%) center/15000%;
+}
+
+.ripple:active {
+	background-color: $color-title !important;
+	background-size: 100%;
+	transition: background 0s;
+}
+
+// ripple table row
+.ripple-table-row:hover {
+	color: $color-white !important;
+	background: $color-second radial-gradient(circle, transparent 1%, $color-second 1%) center/15000%;
+}
+
+.ripple-table-row:active {
+	color: $color-white !important;
+	transition: background 0s;
+	background-size: 100%;
+	background-color: $color-second-dark !important;
+}
+
+// ripple gray
+.ripple-btn-gray:hover {
+	background: #ddd radial-gradient(circle, transparent 1%, #ddd 1%) center/15000%;
+}
+
+.ripple-btn-gray:active {
+	transition: background 0s;
+	background-size: 100%;
+	background-color: #999 !important;
+}
+
+// ripple alert
+.ripple-btn-red:hover {
+	color: $color-white !important;
+	background: $color-primary radial-gradient(circle, transparent 1%, $color-primary 1%) center/15000%;
+}
+
+.ripple-btn-red:active {
+	color: $color-white !important;
+	transition: background 0s;
+	background-size: 100%;
+	background-color: $color-primary-dark;
+}
+
+.list-header {
+	width: 80%;
+	display: block;
+	justify-content: center;
+}
+
+.container-description {
+	margin: 50px;
+	color: $color-primary;
+
+    textarea {
+      width: 600px; 
+	  height: 150px;
+	  font-size: 15px;
+	  color:$color-sentence;
+	  padding: 10px;
+    }
+  }
+
+  .inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	// opacity: 0;
+	overflow: hidden;
+	// position: absolute;
+	z-index: -1;
+  }
+
+  .row-card-desactive {
+    background-color:  #d8d8d8 !important;
+  }
+
+  %target-state {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .active-target {
+    @extend %target-state;
+    color: #229C32;
+  }
+
+  .inactive-target {
+    @extend %target-state;
+    color: #fbc602;
+  }

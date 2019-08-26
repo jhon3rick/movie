@@ -1,0 +1,69 @@
+@import "../../_theme.scss";
+
+.header {
+	width: 100%;
+	height: 54px;
+	display: flex;
+	padding: 0 10px;
+	z-index: 2;
+	// box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16), 0 1px 6px rgba(0, 0, 0, 0.23);
+  background-color: $color-third;
+
+	.logo-text {
+		padding-left: 7px;
+	}
+
+	.logo-container {
+		font-family: $font-family;
+		flex-direction: row;
+		font-size: 22px;
+		font-weight: lighter;
+		color: #8c8383;
+	}
+
+	.panel {
+    &.left {
+      flex: 1;
+      justify-content: center;
+    }
+		&.right {
+      width: 30px;
+			flex-direction: row;
+			// justify-content: flex-start;
+		}
+		a {
+			height: 100%;
+			text-decoration: none;
+		}
+	}
+
+	img {
+		height: 35px;
+	}
+	.btn {
+		display: flex;
+		.btn-icon {
+			color: $font-color-input;
+		}
+
+		&.selected .btn-icon {
+			color: $color-primary;
+		}
+
+		.btn-label {
+			color: $color-primary;
+			height: 16px;
+		}
+		&-circle {
+			margin-right: 15px;
+		}
+	}
+}
+
+@media only screen and (max-width: 780px) {
+	.btn {
+		.mobile-toggle {
+			display: block;
+		}
+	}
+}
